@@ -2,26 +2,25 @@ import './App.css';
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
+  // Switch,
+  // Route,
 } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Books from './components/Books';
-import Categories from './components/Categories';
+// import Books from './components/Books';
+// import Categories from './components/Categories';
 
 const App = () => {
   return (
     <Router>
-      <h3>just to test</h3>
       <Navbar />
-      <Switch>
+      {/* <Switch>
         <Route exact path="/">
           <Books />
         </Route>
         <Route path="/categories">
           <Categories />
         </Route>
-      </Switch>
+      </Switch> */}
   </Router>
   );
 }

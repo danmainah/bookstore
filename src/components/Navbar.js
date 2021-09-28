@@ -7,17 +7,17 @@ const Navbar = () => {
           <nav className="navBar">
             <ul>
             <li>
-              <Link to="/" className="bookstore">
+              <Link to="/" >
                 Bookstore-CMS
              </Link>
             </li>
             <li>
-              <Link to="/" className="books">
+              <Link to="/">
                 Books
               </Link>
             </li>
             <li>
-              <Link to="/categories" className="categories">
+              <Link to="/categories" >
                Categories
               </Link>
             </li>

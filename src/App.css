@@ -15,7 +15,6 @@
 .navbar ul > li {
   padding: 5px 10px;
   font-size: 19px;
-  border-right: 1px solid black;
 }
 
 .navbar ul > li:last-child {
