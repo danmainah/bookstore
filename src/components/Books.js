@@ -1,19 +1,33 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import AddBook from './AddBook';
+import Addbook from './Addbook';
 import Book from './Book';
+import { v4 as uuidv4 } from 'uuid';
 
-const Books = ({ books }) => (
+const content = [
+    {
+        id: uuidv4(),
+        title: 'THe Flying Bus',
+        author: 'Njamba nene',
+      },
+      {
+        id: uuidv4(),
+        title: 'Life in Crime',
+        author: 'Kiriamiti',
+      },
+      {
+        id: uuidv4(),
+        title: 'River between',
+        author: 'Ngugi wa thiongo',
+      },
+]
+
+const Books = () => (  
   <ul>
-    {books.map((book) => (
-      <Book key={book.id} book={book} />
+    {content.map((book) => (
+      <Book key={book.id} title={book.title}  author={book.author} />
     ))}
-    <AddBook />
+    <Addbook />
   </ul>
 );
-
-Books.propTypes = {
-  books: PropTypes.arrayOf.isRequired,
-};
 
 export default Books;
