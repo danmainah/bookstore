@@ -6,7 +6,7 @@ import {
   Route,
 } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Books from './components/Books';
+import BookList from './components/BookList';
 import Categories from './components/Categories';
 
 const App = () => (
@@ -14,7 +14,7 @@ const App = () => (
     <Navbar />
     <Switch>
       <Route exact path="/">
-        <Books />
+        <BookList />
       </Route>
       <Route path="/categories">
         <Categories />
