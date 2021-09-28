@@ -16,7 +16,7 @@
 
 # Features 
   - Dynamic loading of the page elements.
-  - Adding and removing books from the list
+  - Adding and removing books from the list.
  
 # Installation 
 
