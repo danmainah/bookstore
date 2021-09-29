@@ -6,7 +6,10 @@ import Book from './Book';
 
 const Books = () => {
   const books = useSelector((state) => state.booksReducer);
- 
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getBooks());
+  }, [dispatch]);
 
   return (
     <ul>
