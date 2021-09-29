@@ -12,8 +12,8 @@ const AddBook = () => {
     e.preventDefault();
     const newBook = {
       id: uuidv4(), // make sure it's unique
-      title: title || 'Things Fall Apart',
-      author: author || 'Chinua Achebe',
+      title: '' || 'Things Fall Apart',
+      author: '' || 'Chinua Achebe',
     };
     // dispatch an action and pass it the newBook object (your action's payload)
     dispatch(addBook(newBook));
