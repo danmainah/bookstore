@@ -11,11 +11,11 @@ const AddBook = () => {
   const submitBookToStore = (e) => {
     e.preventDefault();
     const newBook = {
-      id: uuidv4(), // make sure it's unique
-      title: '' || 'Things Fall Apart',
-      author: '' || 'Chinua Achebe',
+      item_id: uuidv4(),
+      title,
+      author,
     };
-    // dispatch an action and pass it the newBook object (your action's payload)
+
     dispatch(addBook(newBook));
     setTitle('');
     setAuthor('');
