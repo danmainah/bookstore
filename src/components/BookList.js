@@ -1,33 +1,19 @@
 import React from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import { useSelector } from 'react-redux';
 import Addbook from './Addbook';
 import Book from './Book';
 
-const content = [
-  {
-    id: uuidv4(),
-    title: 'THe Flying Bus',
-    author: 'Njamba nene',
-  },
-  {
-    id: uuidv4(),
-    title: 'Life in Crime',
-    author: 'Kiriamiti',
-  },
-  {
-    id: uuidv4(),
-    title: 'River between',
-    author: 'Ngugi wa thiongo',
-  },
-];
+const Books = () => {
+  const books = useSelector((state) => state.booksReducer);
 
-const Books = () => (
-  <ul>
-    {content.map((book) => (
-      <Book key={book.id} title={book.title} author={book.author} />
-    ))}
-    <Addbook />
-  </ul>
-);
+  return (
+    <ul>
+      {books.map((book) => (
+        <Book key={book.id} book={book} />
+      ))}
+      <Addbook />
+    </ul>
+  );
+};
 
 export default Books;
