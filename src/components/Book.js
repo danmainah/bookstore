@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import { BsFillArchiveFill } from 'react-icons/bs';
 import { removeBook } from '../redux/books/books';
 
 const Book = ({ book }) => {
@@ -12,10 +13,17 @@ const Book = ({ book }) => {
 
   return (
     <div>
-      <li>
-        <p>{book.title}</p>
-        <p>{book.category}</p>
-        <button onClick={() => removeBookFromStore(book.item_id)} type="button">Remove</button>
+      <li className="list-group-item d-flex justify-content-between align-items-start p-3 m-3">
+        <div className="ms-2">
+          <small><i>{book.category}</i></small>
+          <div className="fw-bold rangi m-3">
+            <h3>{book.title}</h3>
+          </div>
+        </div>
+        <button onClick={() => removeBookFromStore(book.item_id)} type="button" className="btn btn-link fw-bold text-danger mt-4">
+          Remove
+          <BsFillArchiveFill />
+        </button>
       </li>
     </div>
   );

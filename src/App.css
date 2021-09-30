@@ -1,25 +1,19 @@
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  background-color: rgb(233, 224, 218);
+.rangi {
+  color: #0290ff;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
   padding: 10px;
-  margin-bottom: 30px;
 }
 
-.navbar ul {
-  list-style: none;
-  display: flex;
+.default {
+  background: #e2e2e2;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar ul > li {
-  padding: 5px 10px;
-  font-size: 19px;
-}
-
-.navbar ul > li:last-child {
-  border-right: none;
-}
-
-.navbar a {
-  color: #25649e;
+.wrapper {
+  width: 90%;
+  margin: auto;
 }
