@@ -1,57 +1,55 @@
-import { createBook, fetchBooks, deleteBook } from '../Api';
+import axios from 'axios';
 
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 const GET_BOOKS = 'bookStore/books/GET_BOOKS';
-
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/QY9p53fQNfR1kQ69d82L/books';
 const initialState = [];
 
-export const addBook = (book) => async (dispatch) => {
-  const result = await createBook(book);
-  if (result) {
-    dispatch({
-      type: ADD_BOOK,
-      payload: book,
-    });
+export const removeBook = (payload) => async (dispatch) => {
+  const { data } = await axios.delete(
+    `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/QY9p53fQNfR1kQ69d82L/books/${payload}`,
+  );
+  if (data) {
+    dispatch({ type: REMOVE_BOOK, payload });
   }
 };
 
-export const removeBook = (book) => async (dispatch) => {
-  const removed = await deleteBook(book);
-  if (removed) {
-    dispatch({
-      type: REMOVE_BOOK,
-      payload: book,
-    });
+export const addBook = (payload) => async (dispatch) => {
+  const { data } = await axios.post(
+    url,
+    payload,
+    {
+      headers: {
+        'Content-Type': 'application/json;charset=UTF-8',
+      },
+    },
+  );
+  if (data) {
+    dispatch({ type: ADD_BOOK, payload });
   }
 };
 
 export const getBooks = () => async (dispatch) => {
-  const entries = fetchBooks();
-  const books = Object.entries(entries).map(([key, value]) => {
-    const [bookEntries] = value;
-    return {
-      item_id: key,
-      ...bookEntries,
-    };
+  const { data } = await axios.get(url);
+  const formattedBooks = [];
+  Object.keys(data).forEach((key) => {
+    if (key) {
+      formattedBooks.push({ ...data[key][0], item_id: key });
+    }
   });
-
-  if (books) {
-    dispatch({
-      type: GET_BOOKS,
-      payload: books,
-    });
-  }
+  dispatch({ type: GET_BOOKS, payload: formattedBooks });
 };
 
 const reducer = (state = initialState, action) => {
-  switch (action.type) {
+  const { type, payload } = action;
+  switch (type) {
     case ADD_BOOK:
-      return [...state, action.book];
+      return [...state, payload];
     case REMOVE_BOOK:
-      return state.filter((book) => book.item_id !== action.book.item_id);
+      return state.filter((book) => book.item_id !== payload);
     case GET_BOOKS:
-      return [...state, ...action.book];
+      return payload;
     default:
       return state;
   }

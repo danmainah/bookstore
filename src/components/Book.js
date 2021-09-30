@@ -14,7 +14,7 @@ const Book = ({ book }) => {
     <div>
       <li>
         <p>{book.title}</p>
-        <p>{book.author}</p>
+        <p>{book.category}</p>
         <button onClick={() => removeBookFromStore(book.item_id)} type="button">Remove</button>
       </li>
     </div>
@@ -25,7 +25,7 @@ Book.propTypes = {
   book: PropTypes.shape({
     item_id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
   }).isRequired,
 };
 

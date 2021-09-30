@@ -5,12 +5,11 @@ import Addbook from './Addbook';
 import Book from './Book';
 
 const BookList = () => {
+  const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
-  const books = useSelector((state) => state.booksReducer);
-
   useEffect(() => {
     dispatch(getBooks());
-  }, []);
+  }, [dispatch]);
   return (
     <ul>
       {books.map((book) => (
