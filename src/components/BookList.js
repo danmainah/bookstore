@@ -11,7 +11,7 @@ const BookList = () => {
     dispatch(getBooks());
   }, [dispatch]);
   return (
-    <ul className="Link-group bg-light m-3 p-3">
+    <ul className="Link-group  m-3 p-3">
       {books.map((book) => (
         <Book key={book.item_id} book={book} />
       ))}

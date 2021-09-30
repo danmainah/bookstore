@@ -6,14 +6,15 @@
 body {
   margin: 0;
   padding: 10px;
-}
-
-.default {
-  background: #e2e2e2;
-  font-family: Arial, Helvetica, sans-serif;
+  background: #c7c7c7;
 }
 
 .wrapper {
-  width: 90%;
+  width: 85%;
   margin: auto;
+  background: #fafafa;
+}
+
+ul {
+ background: #fafafa;
 }
