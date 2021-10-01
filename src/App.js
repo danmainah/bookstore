@@ -11,15 +11,19 @@ import Categories from './components/Categories';
 
 const App = () => (
   <Router>
-    <Navbar />
-    <Switch>
-      <Route exact path="/">
-        <BookList />
-      </Route>
-      <Route path="/categories">
-        <Categories />
-      </Route>
-    </Switch>
+    <div className="wrapper border shadow mt-5">
+      <Navbar />
+      <Switch>
+        <div className="container">
+          <Route exact path="/">
+            <BookList />
+          </Route>
+          <Route path="/categories">
+            <Categories />
+          </Route>
+        </div>
+      </Switch>
+    </div>
   </Router>
 );
 

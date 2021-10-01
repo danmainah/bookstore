@@ -1,25 +1,86 @@
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  background-color: rgb(233, 224, 218);
+.rangi {
+  color: #0290ff;
+  text-decoration: none;
+}
+
+.bluish {
+  background-color: #0290ff;
+}
+
+body {
+  margin: 0;
   padding: 10px;
-  margin-bottom: 30px;
+  background: #f5f6fa;
 }
 
-.navbar ul {
-  list-style: none;
+.wrapper {
+  width: 85%;
+  margin: auto;
+  background: #fafafa;
+}
+
+ul {
+  background: #fafafa;
+}
+
+button {
+  color: #4386bf;
+}
+
+.Oval-2 {
+  width: 4.25rem;
+  height: 4.25rem;
+  border-top: 5px solid var(--dodger-blue);
+  border-right: 5px solid var(--dodger-blue);
+  border-bottom: 5px solid var(--dodger-blue);
+  border-left: 5px solid var(--white);
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+
+/* circle progress bar design */
+.flexy {
   display: flex;
+  border-right: 1px solid gray;
 }
 
-.navbar ul > li {
-  padding: 5px 10px;
-  font-size: 19px;
+.oval {
+  width: 4.25rem;
+  height: 4.25rem;
+  border-style: solid;
+  border-color: #0290ff;
+  border-image-source: linear-gradient(to bottom, var(--medium-blue), var(--dodger-blue));
+  border-image-slice: 1;
+  border-radius: 50%;
+  border-left: 3px solid transparent;
+  transform: rotate(45deg);
 }
 
-.navbar ul > li:last-child {
-  border-right: none;
+.percent {
+  width: 4.25rem;
+  height: 2.438rem;
+  margin: 0.063rem 5.75rem 0 0.688rem;
+  font-family: "Montserrat", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
 }
 
-.navbar a {
-  color: #25649e;
+.completed {
+  width: 5rem;
+  height: 1.125rem;
+  margin: 0.438rem 4.938rem 0.75rem 0.75rem;
+  opacity: 0.5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
 }
